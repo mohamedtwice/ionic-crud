@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {SwingStackComponent, SwingCardComponent} from 'angular2-swing';
 
 import { MyApp } from './app.component';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';

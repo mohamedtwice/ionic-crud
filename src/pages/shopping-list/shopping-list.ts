@@ -5,19 +5,15 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { ShoppingItem } from '../../models/shopping-item/shopping-item.interface';
 import { EditShoppingItemPage } from '../edit-shopping-item/edit-shopping-item';
 
-
-/**
- * Generated class for the ShoppingListPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import {SwingStackComponent, SwingCardComponent} from 'angular2-swing';
 
 @Component({
   selector: 'page-shopping-list',
   templateUrl: 'shopping-list.html',
 })
 export class ShoppingListPage {
+
+cards: Array<any>;
 
 shoppingListRef$: FirebaseListObservable<ShoppingItem[]>
 
@@ -27,6 +23,16 @@ shoppingListRef$: FirebaseListObservable<ShoppingItem[]>
   private database: AngularFireDatabase,
   private actionSheetCtrl: ActionSheetController) {
 
+
+  console.log('in the ctor');
+
+  this.cards = [
+    { name: 'clubs', symbol: '♣' },
+    { name: 'diamonds', symbol: '♦' },
+    { name: 'spades', symbol: '♠' }
+  ];
+
+  
     // pointing shopping list reference at firebase and shopping list node
     this.shoppingListRef$ = this.database.list('shopping-list');
 
